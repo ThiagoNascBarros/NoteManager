@@ -1,0 +1,42 @@
+.titulo{
+    font-weight: bold;
+    color: #000;
+}
+
+.tabela-config{
+    background-color: #A4D7E1;
+    border-radius: 5px;
+}
+
+.td-img{
+    gap: 30px;
+}
+
+.icon-trash{
+    padding: 0px 20px;
+}
+
+.icon-vector{
+    padding: 0px 20px;
+}
+
+@media (max-width: 768px){
+    .tabela-config{
+        background-color: #A4D7E1;
+        border-radius: 5px;
+        width: 50%;
+    }
+
+    .icon-trash{
+        padding: 15px 0px;
+    }
+    
+    .icon-vector{
+        padding: 15px 0px;
+    }
+
+    tr{
+        text-align: center;
+        
+    }
+}
