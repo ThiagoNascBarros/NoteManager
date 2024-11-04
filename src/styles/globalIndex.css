@@ -9,4 +9,5 @@
 body{
     width: 100vw;
     height: 1080px;
+    overflow-x: hidden;
 }
