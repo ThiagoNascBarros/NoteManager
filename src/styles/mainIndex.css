@@ -5,7 +5,14 @@
 
 .tabela-config{
     background-color: #A4D7E1;
-    border-radius: 5px;
+}
+
+th{
+    padding: 10px 25px;
+}
+
+td{
+    padding: 15px 50px;
 }
 
 .td-img{
@@ -24,6 +31,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-top: 15px;
 }
 
 .btn-add{
@@ -34,6 +42,12 @@
     border: none;
     font-weight: bold;
     margin-left: -40px;
+    transition: 0.5s;
+}
+
+.btn-add:hover{
+    background-color: #A4D7E1;
+    transform: scale(1.01);
 }
 
 @media (max-width: 768px){
@@ -41,6 +55,7 @@
         background-color: #A4D7E1;
         border-radius: 5px;
         width: 50%;
+        border-collapse: collapse;
     }
 
     .icon-trash{
@@ -53,7 +68,14 @@
 
     tr{
         text-align: center;
-        
+    }
+
+    th{
+        padding: 18px 12px;
+    }
+    
+    td{
+        padding: 0px 10px;
     }
 }
 
