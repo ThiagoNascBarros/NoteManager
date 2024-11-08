@@ -11,11 +11,11 @@
     <header>
         <nav class="navbar nav-note bg-body-tertiary">
             <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">NoteManager</span>
+                <span class="navbar-brand mb-0 h1">NoteManager</span>
             </div>
         </nav>
     </header>
-    <main class="container">
+    <main class="container" id="conteudo-principal">
         <h1 class="titulo text-center mt-5">Boletim</h1>
 
         <div class="table-responsive mt-5">
@@ -40,7 +40,7 @@
                         <td>9</td>
                         <td>9</td>
                         <td>
-                            <a href="#editar"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
+                            <a href="#" id="edit-aluno" data-file="/src/pages/editar-aluno.html"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
                             <a href="#apagar"><img class="icon-trash" src="public/images/Trash.svg" alt=""></a>
                         </td>
                     </tr>
@@ -52,7 +52,7 @@
                         <td>9</td>
                         <td>9</td>
                         <td>
-                            <a href="#editar"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
+                            <a href="#" id="edit-aluno-2" data-file="/src/pages/editar-aluno.html"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
                             <a href="#apagar"><img class="icon-trash" src="public/images/Trash.svg" alt=""></a>
                         </td>
                     </tr>
@@ -64,7 +64,7 @@
                         <td>9</td>
                         <td>9</td>
                         <td>
-                            <a href="#editar"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
+                            <a href="#" id="edit-aluno-3" data-file="/src/pages/editar-aluno.html"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
                             <a href="#apagar"><img class="icon-trash" src="public/images/Trash.svg" alt=""></a>
                         </td>
                     </tr>
@@ -76,7 +76,7 @@
                         <td>9</td>
                         <td>9</td>
                         <td>
-                            <a href="#editar"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
+                            <a href="#" id="edit-aluno-4" data-file="/src/pages/editar-aluno.html"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
                             <a href="#apagar"><img class="icon-trash" src="public/images/Trash.svg" alt=""></a>
                         </td>
                     </tr>
@@ -88,7 +88,7 @@
                         <td>9</td>
                         <td>9</td>
                         <td>
-                            <a href="#editar"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
+                            <a href="#" id="edit-aluno-5" data-file="/src/pages/editar-aluno.html"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
                             <a href="#apagar"><img class="icon-trash" src="public/images/Trash.svg" alt=""></a>
                         </td>
                     </tr>
@@ -100,7 +100,7 @@
                         <td>9</td>
                         <td>9</td>
                         <td>
-                            <a href="#editar"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
+                            <a href="#" id="edit-aluno-6" data-file="/src/pages/editar-aluno.html"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
                             <a href="#apagar"><img class="icon-trash" src="public/images/Trash.svg" alt=""></a>
                         </td>
                     </tr>
@@ -112,7 +112,7 @@
                         <td>9</td>
                         <td>9</td>
                         <td>
-                            <a href="#editar"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
+                            <a href="#" id="edit-aluno-7" data-file="/src/pages/editar-aluno.html"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
                             <a href="#apagar"><img class="icon-trash" src="public/images/Trash.svg" alt=""></a>
                         </td>
                     </tr>
@@ -121,10 +121,10 @@
                         <td>9</td>
                         <td>9</td>
                         <td>9</td>
-                        <td>9</td>
+                        <td>9</td>  
                         <td>9</td>
                         <td>
-                            <a href="#editar"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
+                            <a href="#" id="edit-aluno-8"><img class="icon-vector" src="public/images/Vector.svg" alt=""></a>
                             <a href="#apagar"><img class="icon-trash" src="public/images/Trash.svg" alt=""></a>
                         </td>
                     </tr>
@@ -132,13 +132,12 @@
             </table>
         </div>
         <div class="ctn">
-            <button class="btn-add">Adicionar<br>Aluno</button>
+            <button class="btn-add" id="btnAdicionarAluno">Adicionar<br>Aluno</button>
         </div>
 
-
     </main>
-    <footer>
-        <div class="container mb-3 text-center text-lg-start p-4">
+    <footer id="footer-add-aluno">
+        <div class="container mb-3 text-center text-lg-start p-4 ">
             <h1 id="emprego">NoteManager</h1>
         </div>
         <div>
@@ -146,6 +145,9 @@
         </div>
     </footer>
 
+
+    <!-- JavaScript -->
+    <script src="src/js/script.js"></script>
 
     <!-- JS do Bootstrap e dependências (jQuery e Popper.js) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

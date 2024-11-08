@@ -5,6 +5,8 @@
 
 .tabela-config{
     background-color: #A4D7E1;
+    border-radius: 10px;
+    border-collapse: collapse;
 }
 
 th{
