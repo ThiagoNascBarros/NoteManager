@@ -1,0 +1,37 @@
+footer{
+    background-color: #A4D7E1;
+    width: 100%;
+    height: 150px;
+    margin-top: 120px;
+    position: absolute;
+}
+
+#emprego{
+    font-size: 2.245rem;
+    color: #005B96;
+    font-weight: bold;
+    margin-bottom: -30px;
+}
+
+.p-copy{
+    color: #005B96; 
+    font-weight: bold;
+}
+
+.footer-add-aluno{
+    margin-top: 400px;
+}
+
+.footer-add-aluno-link{
+    margin-top: 400px;
+}
+
+@media (max-width: 768px){
+    #emprego{
+        font-size: 1.5rem;
+    }
+
+    .p-copy{
+        font-size: 0.765rem;
+    }
+}

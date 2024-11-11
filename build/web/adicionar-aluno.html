@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteManager</title>
+    <!-- Caminho corrigido para o CSS -->
+    <link rel="stylesheet" href="pagina/css/style.css">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+       <nav class="navbar nav-note bg-body-tertiary">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">NoteManager</span>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="container" id="conteudo-principal">
+        <h1 class="titulo text-center">Adicionar Aluno</h1>
+        <div class="table-responsive mt-5">
+            <table class="w-100 table-bordered tabela-config text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Aluno</th>
+                        <th scope="col">Português</th>
+                        <th scope="col">Matemática</th>
+                        <th scope="col">Geografia</th>
+                        <th scope="col">Historia</th>
+                        <th scope="col">Ciências</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><input type="text" class="adn-input-aluno"></th>
+                        <th><input type="text" class="w-50 adn-input"></th>
+                        <th><input type="text" class="w-50 adn-input"></th>
+                        <th><input type="text" class="w-50 adn-input"></th>
+                        <th><input type="text" class="w-50 adn-input"></th>
+                        <th><input type="text" class="w-50 adn-input"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="ctn">
+            <button id="finalizar-add-aluno">Finalizar</button>
+            <a href="index.html" style="text-decoration: none; color: #fff;">
+                <button id="voltar-index" class="voltar-index">Voltar</button>
+            </a>
+        </div>
+    </main>
+    
+        <footer id="footer-editar-aluno">
+        <div class="container mb-3 text-center text-lg-start p-4">
+            <h1 id="emprego">NoteManager</h1>
+        </div>
+        <div>
+            <p class="text-center mt-4 p-copy">@2024-2025 NoteManager | Todos os direitos reservados</p>
+        </div>
+    </footer>
+    
+
+    <!-- Caminho corrigido para o JavaScript -->
+    <script src="../js/script.js"></script>
+
+    <!-- JS do Bootstrap e dependências (jQuery e Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
