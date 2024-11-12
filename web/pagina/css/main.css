@@ -70,13 +70,13 @@ td{
 
 #edit-aluno{
     border: none;
-    background-color: none;
+   
     outline: none;
 }
 
 #finalizar-edit-aluno{
     padding: 15px 25px;
-    text-wrap: nowrap;
+ 
     font-size: 0.945rem;
     background-color: #7EC6D4;
     color: #fff;
