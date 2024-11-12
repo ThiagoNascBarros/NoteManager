@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/11/2024 às 23:49
+-- Tempo de geração: 13/11/2024 às 00:55
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -41,7 +41,9 @@ INSERT INTO `alunos` (`id_aluno`, `nome`, `matricula`) VALUES
 (1, 'Carlos Silva', '2024001'),
 (2, 'Maria Oliveira', '2024002'),
 (3, 'João Santos', '2024003'),
-(4, 'Ana Pereira', '2024004');
+(4, 'Ana Pereira', '2024004'),
+(6, 'Pedro', '	 2024006'),
+(12, 'thiago', ' 2024005');
 
 -- --------------------------------------------------------
 
@@ -99,11 +101,21 @@ INSERT INTO `notas` (`id_nota`, `id_aluno`, `id_disciplina`, `nota`, `periodo`) 
 (13, 3, 3, 9.50, '1º Semestre'),
 (14, 3, 4, 7.00, '1º Semestre'),
 (15, 3, 5, 7.50, '1º Semestre'),
-(16, 4, 1, 6.50, '1º Semestre'),
-(17, 4, 2, 7.00, '1º Semestre'),
-(18, 4, 3, 8.00, '1º Semestre'),
-(19, 4, 4, 9.00, '1º Semestre'),
-(20, 4, 5, 8.50, '1º Semestre');
+(16, 4, 1, 7.60, '1º Semestre'),
+(17, 4, 2, 10.00, '1º Semestre'),
+(18, 4, 3, 10.00, '1º Semestre'),
+(19, 4, 4, 10.00, '1º Semestre'),
+(20, 4, 5, 10.00, '1º Semestre'),
+(26, 6, 1, 10.00, NULL),
+(27, 6, 2, 10.00, NULL),
+(28, 6, 3, 10.00, NULL),
+(29, 6, 4, 10.00, NULL),
+(30, 6, 5, 10.00, NULL),
+(56, 12, 1, 10.00, NULL),
+(57, 12, 2, 10.00, NULL),
+(58, 12, 3, 10.00, NULL),
+(59, 12, 4, 10.00, NULL),
+(60, 12, 5, 10.00, NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -137,7 +149,7 @@ ALTER TABLE `notas`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id_aluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_aluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `disciplinas`
@@ -149,7 +161,7 @@ ALTER TABLE `disciplinas`
 -- AUTO_INCREMENT de tabela `notas`
 --
 ALTER TABLE `notas`
-  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- Restrições para tabelas despejadas
