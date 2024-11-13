@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/11/2024 às 00:55
+-- Tempo de geração: 13/11/2024 às 01:23
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -43,7 +43,8 @@ INSERT INTO `alunos` (`id_aluno`, `nome`, `matricula`) VALUES
 (3, 'João Santos', '2024003'),
 (4, 'Ana Pereira', '2024004'),
 (6, 'Pedro', '	 2024006'),
-(12, 'thiago', ' 2024005');
+(12, 'thiago', ' 2024005'),
+(13, 'Raio', ' 2024006');
 
 -- --------------------------------------------------------
 
@@ -115,7 +116,12 @@ INSERT INTO `notas` (`id_nota`, `id_aluno`, `id_disciplina`, `nota`, `periodo`) 
 (57, 12, 2, 10.00, NULL),
 (58, 12, 3, 10.00, NULL),
 (59, 12, 4, 10.00, NULL),
-(60, 12, 5, 10.00, NULL);
+(60, 12, 5, 10.00, NULL),
+(61, 13, 1, 10.00, '1º Semestre'),
+(62, 13, 2, 10.00, '1º Semestre'),
+(63, 13, 3, 10.00, '1º Semestre'),
+(64, 13, 4, 10.00, '1º Semestre'),
+(65, 13, 5, 10.00, '1º Semestre');
 
 --
 -- Índices para tabelas despejadas
@@ -149,7 +155,7 @@ ALTER TABLE `notas`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id_aluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_aluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `disciplinas`
@@ -161,7 +167,7 @@ ALTER TABLE `disciplinas`
 -- AUTO_INCREMENT de tabela `notas`
 --
 ALTER TABLE `notas`
-  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- Restrições para tabelas despejadas
