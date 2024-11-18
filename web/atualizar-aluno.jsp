@@ -1,69 +1,61 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-<%
-    // Receber os dados do formulário
-    String alunoNome = request.getParameter("alunoNome");
-    double notaPortugues = Double.parseDouble(request.getParameter("notaPortugues"));
-    double notaMatematica = Double.parseDouble(request.getParameter("notaMatematica"));
-    double notaGeografia = Double.parseDouble(request.getParameter("notaGeografia"));
-    double notaHistoria = Double.parseDouble(request.getParameter("notaHistoria"));
-    double notaCiencias = Double.parseDouble(request.getParameter("notaCiencias"));
 
-    // Dados de conexão com o banco de dados
+<%
+    // Dados de conexão
     String url = "jdbc:mysql://localhost:3306/notemanager";
     String user = "root";
     String password = "";
+
     Connection conn = null;
     PreparedStatement ps = null;
+    ResultSet rs = null;
+    int idAluno = Integer.parseInt(request.getParameter("id_aluno"));
+    String nome = request.getParameter("nome");
+    String matricula = request.getParameter("matricula");
+
+    // Pegando as notas das disciplinas
+    Map<String, Double> notas = new HashMap<>();
+    notas.put("Português", Double.parseDouble(request.getParameter("notaPortugues")));
+    notas.put("Matemática", Double.parseDouble(request.getParameter("notaMatematica")));
+    notas.put("Geografia", Double.parseDouble(request.getParameter("notaGeografia")));
+    notas.put("História", Double.parseDouble(request.getParameter("notaHistoria")));
+    notas.put("Ciências", Double.parseDouble(request.getParameter("notaCiencias")));
 
     try {
         // Conectar ao banco de dados
         Class.forName("com.mysql.cj.jdbc.Driver");
         conn = DriverManager.getConnection(url, user, password);
 
-        // Atualizar as notas nas disciplinas correspondentes
-        String updateQuery = "UPDATE notas SET nota = ? WHERE id_aluno = (SELECT id_aluno FROM alunos WHERE nome = ?) AND id_disciplina = ?";
-        
-        // 1. Atualizar a nota de Português
-        ps = conn.prepareStatement(updateQuery);
-        ps.setDouble(1, notaPortugues);
-        ps.setString(2, alunoNome);
-        ps.setInt(3, 1); // Supondo que 1 seja o id da disciplina Português
+        // Atualizar os dados do aluno
+        String updateAluno = "UPDATE alunos SET nome = ?, matricula = ? WHERE id_aluno = ?";
+        ps = conn.prepareStatement(updateAluno);
+        ps.setString(1, nome);
+        ps.setString(2, matricula);
+        ps.setInt(3, idAluno);
         ps.executeUpdate();
 
-        // 2. Atualizar a nota de Matemática
-        ps.setDouble(1, notaMatematica);
-        ps.setString(2, alunoNome);
-        ps.setInt(3, 2); // Supondo que 2 seja o id da disciplina Matemática
-        ps.executeUpdate();
+        // Atualizar as notas das disciplinas
+        String updateNota = "UPDATE notas SET nota = ? WHERE id_aluno = ? AND id_disciplina = (SELECT id_disciplina FROM disciplinas WHERE nome = ?)";
+        for (Map.Entry<String, Double> entry : notas.entrySet()) {
+            String disciplina = entry.getKey();
+            Double nota = entry.getValue();
 
-        // 3. Atualizar a nota de Geografia
-        ps.setDouble(1, notaGeografia);
-        ps.setString(2, alunoNome);
-        ps.setInt(3, 3); // Supondo que 3 seja o id da disciplina Geografia
-        ps.executeUpdate();
+            ps = conn.prepareStatement(updateNota);
+            ps.setDouble(1, nota);
+            ps.setInt(2, idAluno);
+            ps.setString(3, disciplina);
+            ps.executeUpdate();
+        }
 
-        // 4. Atualizar a nota de História
-        ps.setDouble(1, notaHistoria);
-        ps.setString(2, alunoNome);
-        ps.setInt(3, 4); // Supondo que 4 seja o id da disciplina História
-        ps.executeUpdate();
+        // Redirecionar para a página de consulta
+        response.sendRedirect("consultar-alunos.jsp?nome=" + nome);
 
-        // 5. Atualizar a nota de Ciências
-        ps.setDouble(1, notaCiencias);
-        ps.setString(2, alunoNome);
-        ps.setInt(3, 5); // Supondo que 5 seja o id da disciplina Ciências
-        ps.executeUpdate();
-
-        // Se tudo correr bem, redirecionar para a página de consulta
-        response.sendRedirect("consultar-alunos.jsp?sucesso=true");
-        
     } catch (Exception e) {
         e.printStackTrace();
-        // Caso ocorra algum erro, redireciona para a página de erro
-        response.sendRedirect("consultar-alunos.jsp?erro=true");
     } finally {
         try {
+            if (rs != null) rs.close();
             if (ps != null) ps.close();
             if (conn != null) conn.close();
         } catch (SQLException se) {

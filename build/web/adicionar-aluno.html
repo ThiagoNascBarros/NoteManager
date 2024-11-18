@@ -1,4 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,21 +13,23 @@
             padding: 1rem; /* Aumenta o preenchimento (altura) */
         }
 
-        /* Garantir que os campos de texto ocupem toda a largura da célula */
+        /* Garantir que os campos de texto ocupem toda a largura da c�lula */
         input[type="text"], input[type="number"] {
-            width: 100%; /* Faz os campos ocuparem toda a largura disponível */
+            width: 100%; /* Faz os campos ocuparem toda a largura dispon�vel */
         }
 
-        /* Adiciona um espaçamento entre as células da tabela */
+        /* Adiciona um espa�amento entre as c�lulas da tabela */
         .table td, .table th {
-            vertical-align: middle; /* Alinha o conteúdo no meio da célula */
-            padding: 1.5rem; /* Aumenta o padding das células para ficar mais espaçado */
+            vertical-align: middle; /* Alinha o conte�do no meio da c�lula */
+            padding: 1.5rem; /* Aumenta o padding das c�lulas para ficar mais espa�ado */
         }
 
+        /* Flexbox para os bot�es ficarem lado a lado */
         .ctn {
             margin-top: 20px;
             display: flex;
             justify-content: space-between;
+            gap: 10px; /* Espa�amento entre os bot�es */
         }
 
         .btn {
@@ -50,7 +51,7 @@
         <h1 class="titulo text-center">Adicionar Aluno</h1>
 
         <div class="table-responsive mt-5">
-            <!-- Formulário de cadastro -->
+            <!-- Formul�rio de cadastro -->
             <form action="adicionar.jsp" method="POST">
                 <table class="w-100 table-bordered tabela-config text-center table">
                     <thead>
@@ -61,26 +62,29 @@
                             <th scope="col">Matemática</th>
                             <th scope="col">Geografia</th>
                             <th scope="col">História</th>
-                            <th scope="col">Ciências</th>
+                            <th scope="col">Ciencias</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><input type="text" name="nomeAluno" class="form-control" placeholder="Nome do Aluno" required></td>
-                            <td><input type="text" name="matricula" class="form-control" placeholder="Matrícula" required></td>
-                            <td><input type="number" name="notaPortugues" class="form-control" placeholder="Nota Português" min="0" max="10" step="0.1" required></td>
-                            <td><input type="number" name="notaMatematica" class="form-control" placeholder="Nota Matemática" min="0" max="10" step="0.1" required></td>
+                            <td><input type="text" name="matricula" class="form-control" placeholder="Matricula" required></td>
+                            <td><input type="number" name="notaPortugues" class="form-control" placeholder="Nota Portugues" min="0" max="10" step="0.1" required></td>
+                            <td><input type="number" name="notaMatematica" class="form-control" placeholder="Nota Matematica" min="0" max="10" step="0.1" required></td>
                             <td><input type="number" name="notaGeografia" class="form-control" placeholder="Nota Geografia" min="0" max="10" step="0.1" required></td>
-                            <td><input type="number" name="notaHistoria" class="form-control" placeholder="Nota História" min="0" max="10" step="0.1" required></td>
-                            <td><input type="number" name="notaCiencias" class="form-control" placeholder="Nota Ciências" min="0" max="10" step="0.1" required></td>
+                            <td><input type="number" name="notaHistoria" class="form-control" placeholder="Nota Historia" min="0" max="10" step="0.1" required></td>
+                            <td><input type="number" name="notaCiencias" class="form-control" placeholder="Nota Ciencias" min="0" max="10" step="0.1" required></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <div class="ctn">
-                    <button type="submit" class="btn btn-primary">Finalizar</button>
-                    <a href="index.html" class="btn btn-secondary" style="text-decoration: none;">Voltar</a>
-                </div>
+                <!-- Bot�es lado a lado -->
+               <div class="ctn">
+                <button type="submit" class="btn-add-finalizar" id="finalizar-edit-aluno">Finalizar</button>
+                <a href="index.html" style="text-decoration: none; color: #fff;">
+                    <button type="button" id="voltar-index" class="voltar-index">Voltar</button>
+                </a>
+            </div>
             </form>
         </div>
     </main>

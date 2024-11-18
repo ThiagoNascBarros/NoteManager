@@ -1,8 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.sql.*, java.util.*" %>
 
+<%@ page import="java.sql.*, java.util.*" %>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
         <h1 class="titulo text-center">Adicionar Aluno</h1>
 
         <% 
-            // Recebe os dados enviados do formulÃ¡rio via POST
+            // Recebe os dados enviados do formulário via POST
             String nomeAluno = request.getParameter("nomeAluno");
             String matricula = request.getParameter("matricula");
             String notaPortugues = request.getParameter("notaPortugues");
@@ -33,14 +33,18 @@
             String notaHistoria = request.getParameter("notaHistoria");
             String notaCiencias = request.getParameter("notaCiencias");
 
-            // Defina as variÃ¡veis de conexÃ£o com o banco de dados
+            // Defina as variáveis de conexão com o banco de dados
             String url = "jdbc:mysql://localhost:3306/notemanager"; // URL do banco
-            String user = "root"; // UsuÃ¡rio do banco de dados
+            String user = "root"; // Usuário do banco de dados
             String password = ""; // Senha do banco
 
             Connection conn = null;
             PreparedStatement stmtAluno = null;
             PreparedStatement stmtNota = null;
+            PreparedStatement stmtVerificaAluno = null;
+
+            // Query para verificar se o aluno já existe
+            String sqlVerificaAluno = "SELECT COUNT(*) FROM alunos WHERE matricula = ? OR nome = ?";
 
             // Query para inserir dados na tabela alunos
             String sqlAluno = "INSERT INTO alunos (nome, matricula) VALUES (?, ?)";
@@ -48,49 +52,63 @@
             String sqlNota = "INSERT INTO notas (id_aluno, id_disciplina, nota, periodo) VALUES (?, ?, ?, ?)";
 
             try {
-                // Estabelece a conexÃ£o com o banco
-                Class.forName("com.mysql.cj.jdbc.Driver"); // Certifique-se de que o driver MySQL estÃ¡ no classpath
+                // Estabelece a conexão com o banco
+                Class.forName("com.mysql.cj.jdbc.Driver"); // Certifique-se de que o driver MySQL está no classpath
                 conn = DriverManager.getConnection(url, user, password);
 
-                // Insere o aluno na tabela alunos
-                stmtAluno = conn.prepareStatement(sqlAluno, Statement.RETURN_GENERATED_KEYS);
-                stmtAluno.setString(1, nomeAluno);
-                stmtAluno.setString(2, matricula);
-                int rowsInserted = stmtAluno.executeUpdate();
+                // Verifica se o aluno já existe
+                stmtVerificaAluno = conn.prepareStatement(sqlVerificaAluno);
+                stmtVerificaAluno.setString(1, matricula);
+                stmtVerificaAluno.setString(2, nomeAluno);
+                ResultSet rs = stmtVerificaAluno.executeQuery();
 
-                if (rowsInserted > 0) {
-                    // ObtÃ©m o ID do aluno inserido
-                    ResultSet generatedKeys = stmtAluno.getGeneratedKeys();
-                    if (generatedKeys.next()) {
-                        int idAluno = generatedKeys.getInt(1); // ObtÃ©m o ID do aluno recÃ©m-inserido
+                if (rs.next() && rs.getInt(1) > 0) {
+                    // Se o aluno já existir, exibe uma mensagem de erro
+                    out.println("<div class='alert alert-danger mt-4'>");
+                    out.println("<h4>Erro: O aluno já está cadastrado!</h4>");
+                    out.println("<p>Já existe um aluno com o nome ou matrícula fornecida.</p>");
+                    out.println("</div>");
+                } else {
+                    // Caso o aluno não exista, insere o aluno e as notas
+                    stmtAluno = conn.prepareStatement(sqlAluno, Statement.RETURN_GENERATED_KEYS);
+                    stmtAluno.setString(1, nomeAluno);
+                    stmtAluno.setString(2, matricula);
+                    int rowsInserted = stmtAluno.executeUpdate();
 
-                        // Prepara a inserÃ§Ã£o das notas para cada disciplina
-                        Map<String, Double> notas = new HashMap<>();
-                        notas.put("1", Double.parseDouble(notaPortugues));  // ID da disciplina 1 (PortuguÃªs)
-                        notas.put("2", Double.parseDouble(notaMatematica)); // ID da disciplina 2 (MatemÃ¡tica)
-                        notas.put("3", Double.parseDouble(notaGeografia)); // ID da disciplina 3 (Geografia)
-                        notas.put("4", Double.parseDouble(notaHistoria));  // ID da disciplina 4 (HistÃ³ria)
-                        notas.put("5", Double.parseDouble(notaCiencias));  // ID da disciplina 5 (CiÃªncias)
+                    if (rowsInserted > 0) {
+                        // Obtém o ID do aluno inserido
+                        ResultSet generatedKeys = stmtAluno.getGeneratedKeys();
+                        if (generatedKeys.next()) {
+                            int idAluno = generatedKeys.getInt(1); // Obtém o ID do aluno recém-inserido
 
-                        // Insere as notas na tabela notas
-                        stmtNota = conn.prepareStatement(sqlNota);
-                        for (Map.Entry<String, Double> entry : notas.entrySet()) {
-                            stmtNota.setInt(1, idAluno); // ID do aluno
-                            stmtNota.setInt(2, Integer.parseInt(entry.getKey())); // ID da disciplina
-                            stmtNota.setDouble(3, entry.getValue()); // Nota
-                            stmtNota.setString(4, "1Âº Semestre"); // PerÃ­odo
-                            stmtNota.addBatch(); // Adiciona Ã  batch para otimizar a inserÃ§Ã£o
+                            // Prepara a inserção das notas para cada disciplina
+                            Map<String, Double> notas = new HashMap<>();
+                            notas.put("1", Double.parseDouble(notaPortugues));  // ID da disciplina 1 (Português)
+                            notas.put("2", Double.parseDouble(notaMatematica)); // ID da disciplina 2 (Matemática)
+                            notas.put("3", Double.parseDouble(notaGeografia)); // ID da disciplina 3 (Geografia)
+                            notas.put("4", Double.parseDouble(notaHistoria));  // ID da disciplina 4 (História)
+                            notas.put("5", Double.parseDouble(notaCiencias));  // ID da disciplina 5 (Ciências)
+
+                            // Insere as notas na tabela notas
+                            stmtNota = conn.prepareStatement(sqlNota);
+                            for (Map.Entry<String, Double> entry : notas.entrySet()) {
+                                stmtNota.setInt(1, idAluno); // ID do aluno
+                                stmtNota.setInt(2, Integer.parseInt(entry.getKey())); // ID da disciplina
+                                stmtNota.setDouble(3, entry.getValue()); // Nota
+                                stmtNota.setString(4, "1º Semestre"); // Período
+                                stmtNota.addBatch(); // Adiciona à batch para otimizar a inserção
+                            }
+
+                            // Executa o batch de inserção das notas
+                            stmtNota.executeBatch();
+
+                            // Mensagem de sucesso
+                            out.println("<div class='alert alert-success mt-4'>");
+                            out.println("<h4>Aluno Adicionado com Sucesso!</h4>");
+                            out.println("<p><strong>Nome:</strong> " + nomeAluno + "</p>");
+                            out.println("<p><strong>Matrícula:</strong> " + matricula + "</p>");
+                            out.println("</div>");
                         }
-
-                        // Executa o batch de inserÃ§Ã£o das notas
-                        stmtNota.executeBatch();
-
-                        // Mensagem de sucesso
-                        out.println("<div class='alert alert-success mt-4'>");
-                        out.println("<h4>Aluno Adicionado com Sucesso!</h4>");
-                        out.println("<p><strong>Nome:</strong> " + nomeAluno + "</p>");
-                        out.println("<p><strong>MatrÃ­cula:</strong> " + matricula + "</p>");
-                        out.println("</div>");
                     }
                 }
             } catch (SQLException e) {
@@ -100,13 +118,13 @@
                 out.println("<p>" + e.getMessage() + "</p>");
                 out.println("</div>");
             } catch (ClassNotFoundException e) {
-                // Caso o driver JDBC nÃ£o seja encontrado
+                // Caso o driver JDBC não seja encontrado
                 out.println("<div class='alert alert-danger mt-4'>");
                 out.println("<h4>Erro no carregamento do driver JDBC!</h4>");
                 out.println("<p>" + e.getMessage() + "</p>");
                 out.println("</div>");
             } finally {
-                // Fechamento da conexÃ£o e recursos
+                // Fechamento da conexão e recursos
                 try {
                     if (stmtAluno != null) stmtAluno.close();
                     if (stmtNota != null) stmtNota.close();
@@ -119,7 +137,7 @@
             }
         %>
 
-        <!-- Voltar para o formulÃ¡rio -->
+        <!-- Voltar para o formulário -->
         <a href="index.html" class="btn btn-secondary mt-3">Voltar</a>
     </main>
 

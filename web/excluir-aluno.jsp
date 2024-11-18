@@ -1,5 +1,6 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
+
 <%
     // Recebe o nome do aluno pela URL
     String alunoNome = request.getParameter("nome");
