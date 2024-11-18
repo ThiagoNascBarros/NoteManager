@@ -24,11 +24,10 @@
         <form action="consultar-alunos.jsp" method="GET" class="mt-4">
             <div class="form-group">
                 <label for="nome">Nome do Aluno:</label>
-                <input type="text" class="form-control" id="nome" name="nome" 
-                    placeholder="Digite o nome do aluno" required
-                    pattern="^[A-Za-z�-�\s]+$" 
+                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do aluno" required
+                    pattern="^[A-Za-z\s]+$"
                     title="O nome do aluno deve conter apenas letras e espaços.">
-                <small class="form-text text-muted">Exemplo: Joao da Silva, não coloque acento</small>
+                <small class="form-text text-muted">Exemplo: Joao da Silva,não coloque acento</small>
             </div>
             <button type="submit" class="btn btn-primary">Pesquisar</button>
         </form>

@@ -1,10 +1,10 @@
-
+<%@ page language="java" contentType="text/html" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*, java.util.*" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Aluno - NoteManager</title>
     <link rel="stylesheet" href="pagina/css/style.css">

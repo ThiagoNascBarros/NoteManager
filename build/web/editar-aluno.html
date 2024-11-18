@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoteManager</title>
     <link rel="stylesheet" href="pagina/css/style.css">
@@ -15,32 +15,32 @@
             padding: 1rem; /* Aumenta o preenchimento (altura) */
         }
 
-        /* Garantir que os campos de texto ocupem toda a largura da célula */
+        /* Garantir que os campos de texto ocupem toda a largura da c�lula */
         input[type="text"],
         input[type="number"] {
-            width: 100%; /* Faz os campos ocuparem toda a largura disponível */
+            width: 100%; /* Faz os campos ocuparem toda a largura dispon�vel */
         }
 
-        /* Adiciona um espaçamento entre as células da tabela */
+        /* Adiciona um espa�amento entre as c�lulas da tabela */
         .table td,
         .table th {
-            vertical-align: middle; /* Alinha o conteúdo no meio da célula */
-            padding: 1.5rem; /* Aumenta o padding das células para ficar mais espaçado */
+            vertical-align: middle; /* Alinha o conte�do no meio da c�lula */
+            padding: 1.5rem; /* Aumenta o padding das c�lulas para ficar mais espa�ado */
         }
 
-        /* Flexbox para os botões ficarem lado a lado */
+        /* Flexbox para os bot�es ficarem lado a lado */
         .ctn {
             margin-top: 20px;
             display: flex;
             justify-content: space-between;
-            gap: 10px; /* Espaçamento entre os botões */
+            gap: 10px; /* Espa�amento entre os bot�es */
         }
 
         .btn {
             padding: 10px 20px;
         }
 
-        /* Estilizando o botão 'Voltar' */
+        /* Estilizando o bot�o 'Voltar' */
         .voltar-index {
             background-color: #f44336;
             border: none;
@@ -54,7 +54,7 @@
             background-color: #d32f2f;
         }
 
-        /* Estilizando o botão 'Finalizar' */
+        /* Estilizando o bot�o 'Finalizar' */
         .btn-add-finalizar {
             background-color: #4CAF50;
             border: none;
@@ -68,7 +68,7 @@
             background-color: #388e3c;
         }
 
-        /* Melhorando a visualização da tabela */
+        /* Melhorando a visualiza��o da tabela */
         .table-responsive {
             margin-top: 30px;
         }
@@ -88,7 +88,7 @@
     <main class="container" id="conteudo-principal">
         <h1 class="titulo text-center">Editar Aluno</h1>
 
-        <!-- Formulário de edição -->
+        <!-- Formul�rio de edi��o -->
         <form action="editar-aluno.jsp" method="POST">
 
             <div class="table-responsive mt-5">
@@ -118,7 +118,7 @@
                 </table>
             </div>
 
-            <!-- Botões para finalizar ou voltar -->
+            <!-- Bot�es para finalizar ou voltar -->
                <div class="ctn">
                 <button type="submit" class="btn-add-finalizar" id="finalizar-edit-aluno">Finalizar</button>
                 <a href="index.html" style="text-decoration: none; color: #fff;">
@@ -126,7 +126,7 @@
                 </a>
              </div>
         </form>
-        <!-- Fim do formulário -->
+        <!-- Fim do formul�rio -->
 
     </main>
 
@@ -142,7 +142,7 @@
     <!-- JavaScript -->
     <script src="../conteudo/js/script.js"></script>
 
-    <!-- JS do Bootstrap e dependências (jQuery e Popper.js) -->
+    <!-- JS do Bootstrap e depend�ncias (jQuery e Popper.js) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

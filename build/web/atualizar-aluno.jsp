@@ -1,6 +1,6 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-
+<%@ page language="java" contentType="text/html" pageEncoding="ISO-8859-1"%>
 <%
     // Dados de conexão
     String url = "jdbc:mysql://localhost:3306/notemanager";

@@ -1,6 +1,6 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-
+<%@ page language="java" contentType="text/html" pageEncoding="ISO-8859-1"%>
 <%
     // Dados de conexão
     String url = "jdbc:mysql://localhost:3306/notemanager";
@@ -157,7 +157,8 @@
                                 <!-- Link para editar -->
                                 <a href="editar-aluno.jsp?id=<%= idAluno %>" class="btn btn-warning btn-sm">Editar</a>
                                 <!-- Link para apagar -->
-                                <a href="excluir-aluno.jsp?nome=<%= alunoNome%>" class="btn btn-danger">Excluir</a>
+                                <a href="excluir-aluno.jsp?id=<%= idAluno %>" class="btn btn-danger">Excluir</a>
+
                             </td>
                         </tr>
                         <% 

@@ -1,6 +1,6 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-
+<%@ page language="java" contentType="text/html" pageEncoding="ISO-8859-1"%>
 <%
     // Dados de conexão
     String url = "jdbc:mysql://localhost:3306/notemanager";
@@ -44,7 +44,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Aluno - NoteManager</title>
     <link rel="stylesheet" href="pagina/css/style.css">

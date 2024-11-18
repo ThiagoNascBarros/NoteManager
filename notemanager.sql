@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18/11/2024 às 01:42
+-- Tempo de geração: 18/11/2024 às 23:30
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -38,7 +38,6 @@ CREATE TABLE `alunos` (
 --
 
 INSERT INTO `alunos` (`id_aluno`, `nome`, `matricula`) VALUES
-(22, 'Pedro', '2024009'),
 (28, 'joao', ' 2024006'),
 (29, 'Thiago', ' 2024008'),
 (30, 'jose', ' 2024011'),
@@ -48,7 +47,8 @@ INSERT INTO `alunos` (`id_aluno`, `nome`, `matricula`) VALUES
 (34, 'Vitor Aldivan', ' 2024015'),
 (35, 'Nicole', ' 2024016'),
 (36, 'Sabrina', ' 2024017'),
-(37, 'Felipe', ' 2024018');
+(37, 'Felipe', ' 2024018'),
+(40, 'Pedro', ' 2024002');
 
 -- --------------------------------------------------------
 
@@ -91,21 +91,16 @@ CREATE TABLE `notas` (
 --
 
 INSERT INTO `notas` (`id_nota`, `id_aluno`, `id_disciplina`, `nota`, `periodo`) VALUES
-(106, 22, 1, 9.00, '1º Semestre'),
-(107, 22, 2, 8.00, '1º Semestre'),
-(108, 22, 3, 8.00, '1º Semestre'),
-(109, 22, 4, 8.00, '1º Semestre'),
-(110, 22, 5, 8.00, '1º Semestre'),
 (136, 28, 1, 9.00, '1º Semestre'),
 (137, 28, 2, 10.00, '1º Semestre'),
 (138, 28, 3, 10.00, '1º Semestre'),
 (139, 28, 4, 9.50, '1º Semestre'),
 (140, 28, 5, 9.50, '1º Semestre'),
-(141, 29, 1, 9.00, '1º Semestre'),
-(142, 29, 2, 9.00, '1º Semestre'),
-(143, 29, 3, 9.00, '1º Semestre'),
-(144, 29, 4, 9.00, '1º Semestre'),
-(145, 29, 5, 9.00, '1º Semestre'),
+(141, 29, 1, 9.50, '1º Semestre'),
+(142, 29, 2, 9.50, '1º Semestre'),
+(143, 29, 3, 9.50, '1º Semestre'),
+(144, 29, 4, 9.50, '1º Semestre'),
+(145, 29, 5, 9.50, '1º Semestre'),
 (146, 30, 1, 8.00, '1º Semestre'),
 (147, 30, 2, 8.00, '1º Semestre'),
 (148, 30, 3, 8.00, '1º Semestre'),
@@ -145,7 +140,12 @@ INSERT INTO `notas` (`id_nota`, `id_aluno`, `id_disciplina`, `nota`, `periodo`) 
 (182, 37, 2, 7.00, '1º Semestre'),
 (183, 37, 3, 7.00, '1º Semestre'),
 (184, 37, 4, 7.00, '1º Semestre'),
-(185, 37, 5, 7.00, '1º Semestre');
+(185, 37, 5, 7.00, '1º Semestre'),
+(196, 40, 1, 9.00, '1º Semestre'),
+(197, 40, 2, 9.00, '1º Semestre'),
+(198, 40, 3, 9.00, '1º Semestre'),
+(199, 40, 4, 7.00, '1º Semestre'),
+(200, 40, 5, 7.00, '1º Semestre');
 
 --
 -- Índices para tabelas despejadas
@@ -179,7 +179,7 @@ ALTER TABLE `notas`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id_aluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_aluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de tabela `disciplinas`
@@ -191,7 +191,7 @@ ALTER TABLE `disciplinas`
 -- AUTO_INCREMENT de tabela `notas`
 --
 ALTER TABLE `notas`
-  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
+  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 
 --
 -- Restrições para tabelas despejadas
