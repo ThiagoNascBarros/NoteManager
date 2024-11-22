@@ -3,39 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Aluno - NoteManager</title>
+    <title>NoteManager</title>
     <link rel="stylesheet" href="pagina/css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Aumentando o tamanho dos campos de entrada */
-        .form-control {
-            font-size: 1.2rem; /* Aumenta o tamanho da fonte */
-            padding: 1rem; /* Aumenta o preenchimento (altura) */
-        }
-
-        /* Garantir que os campos de texto ocupem toda a largura da c�lula */
-        input[type="text"], input[type="number"] {
-            width: 100%; /* Faz os campos ocuparem toda a largura dispon�vel */
-        }
-
-        /* Adiciona um espa�amento entre as c�lulas da tabela */
-        .table td, .table th {
-            vertical-align: middle; /* Alinha o conte�do no meio da c�lula */
-            padding: 1.5rem; /* Aumenta o padding das c�lulas para ficar mais espa�ado */
-        }
-
-        /* Flexbox para os bot�es ficarem lado a lado */
-        .ctn {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            gap: 10px; /* Espa�amento entre os bot�es */
-        }
-
-        .btn {
-            padding: 10px 20px;
-        }
-    </style>
 </head>
 <body>
 
@@ -53,7 +23,7 @@
         <div class="table-responsive mt-5">
             <!-- Formul�rio de cadastro -->
             <form action="adicionar.jsp" method="POST">
-                <table class="w-100 table-bordered tabela-config text-center table">
+                <table class="w-100 table-responsive table-bordered tabela-config text-center table">
                     <thead>
                         <tr>
                             <th scope="col">Aluno</th>
@@ -79,13 +49,13 @@
                 </table>
 
                 <!-- Bot�es lado a lado -->
-               <div class="ctn">
-                <button type="submit" class="btn-add-finalizar" id="finalizar-edit-aluno">Finalizar</button>
-                <a href="index.html" style="text-decoration: none; color: #fff;">
-                    <button type="button" id="voltar-index" class="voltar-index">Voltar</button>
-                </a>
-            </div>
             </form>
+        </div>
+        <div class="ctn">
+            <button type="submit" class="btn-add-finalizar" id="finalizar-edit-aluno">Finalizar</button>
+            <a href="index.html" style="text-decoration: none; color: #fff;">
+                <button type="button" id="voltar-index" class="voltar-index">Voltar</button>
+            </a>
         </div>
     </main>
 
@@ -97,7 +67,6 @@
             <p class="text-center mt-4 p-copy">@2024-2025 NoteManager | Todos os direitos reservados</p>
         </div>
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
