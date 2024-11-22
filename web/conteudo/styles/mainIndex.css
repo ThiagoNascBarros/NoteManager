@@ -3,6 +3,20 @@
     color: #000;
 }
 
+.mt-main{
+    margin-top: 10rem;
+}
+thead{
+    width: 300px;
+    height: 5em;
+}
+
+tbody{
+    width: 300px;
+    height: 20em;
+}
+
+
 @media screen and (max-width: 1280px){
     .ctn-title{
         margin-bottom: 5%;
@@ -30,8 +44,10 @@
 
 .ctn{
     display: flex;
-    justify-content: flex-end;
+    justify-content: end;
     align-items: center;
+    margin-top: 25px;
+    gap: 20px;
 }
 
 .btn-add{
@@ -55,7 +71,16 @@
     background-color: #7EC6D4;
     border: none;
     border-radius: 5px;
-    color: #005b96;
+    font-weight: bold;
+    color: #fff;
+}
+
+.btn-pesquisar-b{
+    padding: 10px 20px;
+    background-color: #7EC6D4;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
     font-weight: bold;
 }
 

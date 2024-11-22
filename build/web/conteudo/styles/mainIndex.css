@@ -3,37 +3,51 @@
     color: #000;
 }
 
+.mt-main{
+    margin-top: 10rem;
+}
+thead{
+    width: 300px;
+    height: 5em;
+}
+
+tbody{
+    width: 300px;
+    height: 20em;
+}
+
+
+@media screen and (max-width: 1280px){
+    .ctn-title{
+        margin-bottom: 5%;
+    }
+    .titulo{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 428px){
+    .ctn-title{
+        margin-top: -100px;
+    }
+
+    .titulo{
+        font-size: 1.8rem;
+    }
+}
+
 .tabela-config{
     background-color: #A4D7E1;
     border-radius: 10px;
     border-collapse: collapse;
 }
 
-th{
-    padding: 10px 25px;
-}
-
-td{
-    padding: 15px 50px;
-}
-
-.td-img{
-    gap: 30px;
-}
-
-.icon-trash{
-    padding: 0px 20px;
-}
-
-.icon-vector{
-    padding: 0px 20px;
-}
-
 .ctn{
     display: flex;
-    justify-content: flex-end;
+    justify-content: end;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 25px;
+    gap: 20px;
 }
 
 .btn-add{
@@ -50,6 +64,28 @@ td{
 .btn-add:hover{
     background-color: #A4D7E1;
     transform: scale(1.01);
+}
+
+.btn-pesquisar{
+    padding: 10px 20px;
+    background-color: #7EC6D4;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.btn-pesquisar-b{
+    padding: 10px 20px;
+    background-color: #7EC6D4;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.container-form{
+    margin-top: 13rem;
 }
 
 @media (max-width: 768px){

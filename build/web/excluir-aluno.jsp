@@ -141,7 +141,7 @@
                 <% if (!mensagem.equals("Erro: Nenhum aluno encontrado com o ID fornecido!")) { %>
                 <p>Tem certeza que deseja excluir o aluno <strong><%= alunoNome %></strong>?</p>
                 <button type="submit" class="btn btn-danger" name="confirmar" value="sim">Sim, excluir</button>
-                <a href="consultar-alunos.jsp" class="btn btn-secondary">Não, voltar</a>
+                    <button href="consultar-alunos.jsp" class="btn-negative">Não, voltar</button>
                 <% } %>
             </div>
         </form>

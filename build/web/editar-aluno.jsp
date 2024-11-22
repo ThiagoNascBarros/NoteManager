@@ -110,21 +110,22 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <div class="ctn">
-                    <button type="submit" class="btn btn-primary">Atualizar</button>
-                    <a href="consultar-alunos.jsp" style="text-decoration: none; color: #fff;">
-                        <button type="button" class="btn btn-secondary">Voltar</button>
-                    </a>
-                </div>
             </div>
         </form>
+        <div class="ctn">
+            <button type="submit" class="btn-atualizar">Atualizar</button>
+                <a href="consultar-alunos.jsp" style="text-decoration: none; color: #fff;">
+                  <button type="button" class="btn-voltar">Voltar</button>
+                </a>
+        </div>
     </main>
 
-    <footer>
-        <div class="container text-center p-4">
-            <h1>NoteManager</h1>
-            <p>@2024-2025 NoteManager | Todos os direitos reservados</p>
+    <footer id="footer-editar-aluno">
+        <div class="container mb-3 text-center text-lg-start p-4">
+            <h1 id="emprego">NoteManager</h1>
+        </div>
+        <div>
+            <p class="text-center mt-4 p-copy">@2024-2025 NoteManager | Todos os direitos reservados</p>
         </div>
     </footer>
 

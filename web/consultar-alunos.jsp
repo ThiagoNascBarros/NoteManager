@@ -83,7 +83,7 @@
         </nav>
     </header>
 
-    <main class="container mt-5">
+    <main class="container mt-main">
         <h1 class="titulo text-center">Notas dos Alunos</h1>
 
         <!-- Formulário de pesquisa de aluno -->
@@ -92,7 +92,7 @@
                 <label for="nome">Nome do Aluno:</label>
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do aluno" value="<%= alunoPesquisado != null ? alunoPesquisado : "" %>" required>
             </div>
-            <button type="submit" class="btn btn-primary">Pesquisar</button>
+            <button type="submit" class="btn-pesquisar-b">Pesquisar</button>
         </form>
 
         <% 
@@ -155,9 +155,9 @@
                             %>
                           <td>
                                 <!-- Link para editar -->
-                                <a href="editar-aluno.jsp?id=<%= idAluno %>" class="btn btn-warning btn-sm">Editar</a>
+                                <a href="editar-aluno.jsp?id=<%= idAluno %>" class="btn"><img src="<%= request.getContextPath() %>/pagina/images/Vector.svg"/></a>
                                 <!-- Link para apagar -->
-                                <a href="excluir-aluno.jsp?id=<%= idAluno %>" class="btn btn-danger">Excluir</a>
+                                <a href="excluir-aluno.jsp?id=<%= idAluno %>" class="btn"><img src="<%= request.getContextPath() %>/pagina/images/Trash.svg"/></a>
 
                             </td>
                         </tr>
@@ -171,10 +171,7 @@
                 } 
             } 
         %>
-
-    </main>
-
-    <!-- Botão de adicionar aluno após o conteúdo principal -->
+        <!-- Botão de adicionar aluno após o conteúdo principal -->
     <div class="ctn">
         <a href="adicionar-aluno.html">
             <button class="btn-add" id="btnAdicionarAluno">
@@ -182,11 +179,14 @@
             </button>
         </a>
     </div>
+    </main>
 
-    <footer>
-        <div class="container text-center p-4">
-            <h1>NoteManager</h1>
-            <p>@2024-2025 NoteManager | Todos os direitos reservados</p>
+    <footer id="footer-editar-aluno">
+        <div class="container mb-3 text-center text-lg-start p-4">
+            <h1 id="emprego">NoteManager</h1>
+        </div>
+        <div>
+            <p class="text-center mt-4 p-copy">@2024-2025 NoteManager | Todos os direitos reservados</p>
         </div>
     </footer>
 
