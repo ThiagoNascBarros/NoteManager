@@ -100,8 +100,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="text" name="nome" class="form-control" value="<%= nome %>"  readonly    required></td>
-                            <td><input type="text" name="matricula" class="form-control" value="<%= matricula %>" readonly    required></td>
+                            <td><input type="text" name="nome" class="form-control" value="<%= nome %>"  readonly required></td>
+                            <td><input type="text" name="matricula" class="form-control" value="<%= matricula %>" readonly required></td>
                             <td><input type="number" name="notaPortugues" class="form-control" value="<%= notasAluno.get("Português") != null ? notasAluno.get("Português") : 0 %>" min="0" max="10" step="0.1" required></td>
                             <td><input type="number" name="notaMatematica" class="form-control" value="<%= notasAluno.get("Matemática") != null ? notasAluno.get("Matemática") : 0 %>" min="0" max="10" step="0.1" required></td>
                             <td><input type="number" name="notaGeografia" class="form-control" value="<%= notasAluno.get("Geografia") != null ? notasAluno.get("Geografia") : 0 %>" min="0" max="10" step="0.1" required></td>
@@ -110,21 +110,24 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
 
-                <div class="ctn">
-                    <button type="submit" class="btn btn-primary">Atualizar</button>
-                    <a href="consultar-alunos.jsp" style="text-decoration: none; color: #fff;">
-                        <button type="button" class="btn btn-secondary">Voltar</button>
-                    </a>
-                </div>
+            <!-- Botão de envio dentro do formulário -->
+            <div class="ctn">
+                <button type="submit" class="btn-atualizar">Atualizar</button>
+                <a href="consultar-alunos.jsp" style="text-decoration: none; color: #fff;">
+                    <button type="button" class="btn-voltar">Voltar</button>
+                </a>
             </div>
         </form>
     </main>
 
-    <footer>
-        <div class="container text-center p-4">
-            <h1>NoteManager</h1>
-            <p>@2024-2025 NoteManager | Todos os direitos reservados</p>
+    <footer id="footer-editar-aluno">
+        <div class="container mb-3 text-center text-lg-start p-4">
+            <h1 id="emprego">NoteManager</h1>
+        </div>
+        <div>
+            <p class="text-center mt-4 p-copy">@2024-2025 NoteManager | Todos os direitos reservados</p>
         </div>
     </footer>
 

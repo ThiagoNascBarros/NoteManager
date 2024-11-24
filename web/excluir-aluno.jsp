@@ -132,8 +132,12 @@
         <div class="alert alert-warning mt-4" role="alert">
             O aluno não foi encontrado. <a href="consultar-alunos.jsp">Voltar para a lista de alunos</a>
         </div>
-        <% } %>
-
+        <% } else if (mensagem.startsWith("Aluno")) { %>
+        <!-- Após a exclusão, mostra a mensagem e oferece link para voltar -->
+        <div class="alert alert-success mt-4" role="alert">
+            O aluno foi excluído com sucesso! <a href="consultar-alunos.jsp">Voltar para a lista de alunos</a>
+        </div>
+        <% } else { %>
         <!-- Formulário de confirmação -->
         <form action="excluir-aluno.jsp" method="GET">
             <input type="hidden" name="id" value="<%= idAluno %>" />
@@ -141,10 +145,12 @@
                 <% if (!mensagem.equals("Erro: Nenhum aluno encontrado com o ID fornecido!")) { %>
                 <p>Tem certeza que deseja excluir o aluno <strong><%= alunoNome %></strong>?</p>
                 <button type="submit" class="btn btn-danger" name="confirmar" value="sim">Sim, excluir</button>
+                <!-- Correção do link para voltar -->
                 <a href="consultar-alunos.jsp" class="btn btn-secondary">Não, voltar</a>
                 <% } %>
             </div>
         </form>
+        <% } %>
     </main>
 
     <footer id="footer-editar-aluno">

@@ -3,39 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Aluno - NoteManager</title>
+    <title>NoteManager</title>
     <link rel="stylesheet" href="pagina/css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Aumentando o tamanho dos campos de entrada */
-        .form-control {
-            font-size: 1.2rem; /* Aumenta o tamanho da fonte */
-            padding: 1rem; /* Aumenta o preenchimento (altura) */
-        }
-
-        /* Garantir que os campos de texto ocupem toda a largura da c�lula */
-        input[type="text"], input[type="number"] {
-            width: 100%; /* Faz os campos ocuparem toda a largura dispon�vel */
-        }
-
-        /* Adiciona um espa�amento entre as c�lulas da tabela */
-        .table td, .table th {
-            vertical-align: middle; /* Alinha o conte�do no meio da c�lula */
-            padding: 1.5rem; /* Aumenta o padding das c�lulas para ficar mais espa�ado */
-        }
-
-        /* Flexbox para os bot�es ficarem lado a lado */
-        .ctn {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-            gap: 10px; /* Espa�amento entre os bot�es */
-        }
-
-        .btn {
-            padding: 10px 20px;
-        }
-    </style>
 </head>
 <body>
 
@@ -51,9 +21,9 @@
         <h1 class="titulo text-center">Adicionar Aluno</h1>
 
         <div class="table-responsive mt-5">
-            <!-- Formul�rio de cadastro -->
+            <!-- Formulário de cadastro -->
             <form action="adicionar.jsp" method="POST">
-                <table class="w-100 table-bordered tabela-config text-center table">
+                <table class="w-100 table-responsive table-bordered tabela-config text-center table">
                     <thead>
                         <tr>
                             <th scope="col">Aluno</th>
@@ -62,29 +32,33 @@
                             <th scope="col">Matemática</th>
                             <th scope="col">Geografia</th>
                             <th scope="col">História</th>
-                            <th scope="col">Ciencias</th>
+                            <th scope="col">Ciências</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="text" name="nomeAluno" class="form-control" placeholder="Nome do Aluno" required></td>
-                            <td><input type="text" name="matricula" class="form-control" placeholder="Matricula" required></td>
-                            <td><input type="number" name="notaPortugues" class="form-control" placeholder="Nota Portugues" min="0" max="10" step="0.1" required></td>
-                            <td><input type="number" name="notaMatematica" class="form-control" placeholder="Nota Matematica" min="0" max="10" step="0.1" required></td>
+                            <!-- Validação para permitir apenas letras sem acento e espaços no nome do aluno -->
+                            <td><input type="text" name="nomeAluno" class="form-control" placeholder="Nome do Aluno" pattern="[A-Za-z\s]+" title="Somente letras (sem acento) e espaços são permitidos" required></td>
+                            
+                            <!-- Validação para garantir que a matrícula tenha exatamente 11 dígitos numéricos -->
+                            <td><input type="text" name="matricula" class="form-control" placeholder="Matrícula" pattern="^\d{11}$" title="A matrícula deve conter exatamente 11 dígitos numéricos" required></td>
+                            
+                            <td><input type="number" name="notaPortugues" class="form-control" placeholder="Nota Português" min="0" max="10" step="0.1" required></td>
+                            <td><input type="number" name="notaMatematica" class="form-control" placeholder="Nota Matemática" min="0" max="10" step="0.1" required></td>
                             <td><input type="number" name="notaGeografia" class="form-control" placeholder="Nota Geografia" min="0" max="10" step="0.1" required></td>
-                            <td><input type="number" name="notaHistoria" class="form-control" placeholder="Nota Historia" min="0" max="10" step="0.1" required></td>
-                            <td><input type="number" name="notaCiencias" class="form-control" placeholder="Nota Ciencias" min="0" max="10" step="0.1" required></td>
+                            <td><input type="number" name="notaHistoria" class="form-control" placeholder="Nota História" min="0" max="10" step="0.1" required></td>
+                            <td><input type="number" name="notaCiencias" class="form-control" placeholder="Nota Ciências" min="0" max="10" step="0.1" required></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <!-- Bot�es lado a lado -->
-               <div class="ctn">
-                <button type="submit" class="btn-add-finalizar" id="finalizar-edit-aluno">Finalizar</button>
-                <a href="index.html" style="text-decoration: none; color: #fff;">
-                    <button type="button" id="voltar-index" class="voltar-index">Voltar</button>
-                </a>
-            </div>
+                <!-- Botões lado a lado -->
+                <div class="ctn">
+                    <button type="submit" class="btn-add-finalizar" id="finalizar-edit-aluno">Finalizar</button>
+                    <a href="index.html" style="text-decoration: none; color: #fff;">
+                        <button type="button" id="voltar-index" class="voltar-index">Voltar</button>
+                    </a>
+                </div>
             </form>
         </div>
     </main>

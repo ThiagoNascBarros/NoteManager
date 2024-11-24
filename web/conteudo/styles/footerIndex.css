@@ -2,7 +2,7 @@ footer{
     background-color: #A4D7E1;
     width: 100%;
     height: 150px;
-    margin-top: 120px;
+    margin-top: 550px;
     position: absolute;
 }
 
@@ -24,6 +24,16 @@ footer{
 
 .footer-add-aluno-link{
     margin-top: 400px;
+}
+
+.footer-config{
+    font-family: 'Lunasima';
+    font-weight: bold;
+    color: #005B96;
+}
+
+.title{
+    font-size: 2.2rem;
 }
 
 @media (max-width: 768px){
