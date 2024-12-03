@@ -1,0 +1,103 @@
+.titulo{
+    font-weight: bold;
+    color: #000;
+}
+
+.tabela-config{
+    background-color: #A4D7E1;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+
+th{
+    padding: 10px 25px;
+}
+
+td{
+    padding: 15px 50px;
+}
+
+.td-img{
+    gap: 30px;
+}
+
+.icon-trash{
+    padding: 0px 20px;
+}
+
+.icon-vector{
+    padding: 0px 20px;
+}
+
+.ctn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.btn-add{
+    padding: 15px 35px;
+    background-color: #7EC6D4;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin-left: -40px;
+    transition: 0.5s;
+}
+
+.btn-add:hover{
+    background-color: #A4D7E1;
+    transform: scale(1.01);
+}
+
+@media (max-width: 768px){
+    .tabela-config{
+        background-color: #A4D7E1;
+        border-radius: 5px;
+        width: 50%;
+        border-collapse: collapse;
+    }
+
+    .icon-trash{
+        padding: 15px 0px;
+    }
+    
+    .icon-vector{
+        padding: 15px 0px;
+    }
+
+    tr{
+        text-align: center;
+    }
+
+    th{
+        padding: 18px 12px;
+    }
+    
+    td{
+        padding: 0px 10px;
+    }
+}
+
+@media (max-width: 990px){
+    .tabela-config{
+        background-color: #A4D7E1;
+        border-radius: 5px;
+        width: 50%;
+    }
+
+    .icon-trash{
+        padding: 10px;
+    }
+    
+    .icon-vector{
+        padding: 10px;
+    }
+
+    tr{
+        text-align: center;
+        
+    }
+}

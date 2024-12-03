@@ -1,0 +1,145 @@
+.titulo{
+    font-weight: bold;
+    color: #000;
+}
+
+.mt-main{
+    margin-top: 10rem;
+}
+thead{
+    width: 300px;
+    height: 5em;
+    color: #fff;
+}
+
+th{
+    color: #fff;
+}
+
+tbody{
+    width: 10rem;
+    height: 10em;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 1280px){
+    .ctn-title{
+        margin-bottom: 5%;
+    }
+    .titulo{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 428px){
+    .ctn-title{
+        margin-top: -100px;
+    }
+
+    .titulo{
+        font-size: 1.8rem;
+    }
+}
+
+.tabela-config{
+    background-color: #A4D7E1;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+
+.ctn{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 25px;
+    gap: 20px;
+}
+
+.btn-add{
+    padding: 15px 35px;
+    background-color: #7EC6D4;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin-left: -40px;
+    transition: 0.5s;
+}
+
+.btn-add:hover{
+    background-color: #A4D7E1;
+    transform: scale(1.01);
+}
+
+.btn-pesquisar{
+    padding: 10px 20px;
+    background-color: #7EC6D4;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.btn-pesquisar-b{
+    padding: 10px 20px;
+    background-color: #7EC6D4;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.container-form{
+    margin-top: 13rem;
+}
+
+@media (max-width: 768px){
+    .tabela-config{
+        background-color: #A4D7E1;
+        border-radius: 5px;
+        width: 50%;
+        border-collapse: collapse;
+    }
+
+    .icon-trash{
+        padding: 15px 0px;
+    }
+    
+    .icon-vector{
+        padding: 15px 0px;
+    }
+
+    tr{
+        text-align: center;
+    }
+
+    th{
+        padding: 18px 12px;
+    }
+    
+    td{
+        padding: 0px 10px;
+    }
+}
+
+@media (max-width: 990px){
+    .tabela-config{
+        background-color: #A4D7E1;
+        border-radius: 5px;
+        width: 50%;
+    }
+
+    .icon-trash{
+        padding: 10px;
+    }
+    
+    .icon-vector{
+        padding: 10px;
+    }
+
+    tr{
+        text-align: center;
+        
+    }
+}

@@ -1,0 +1,279 @@
+.titulo{
+    font-weight: bold;
+    color: #000;
+    margin-top: 15%;
+}
+
+.tabela-config{
+    background-color: #A4D7E1;
+    margin-top: 5%;
+}
+
+thead{
+    color: #fff;
+}
+
+th{
+    padding: 10px 25px;
+}
+
+td{
+    padding: 15px 50px;
+}
+
+.td-img{
+    gap: 30px;
+}
+
+.ctn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+
+.fw-bold{
+    font-weight: bold;
+}
+
+.btn-add-finalizar{
+    padding: 15px 35px;
+    background-color: #7EC6D4;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin-left: 88%;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+
+.adn-input{
+    border: none;
+    background-color: #ffffff;
+    text-align: center;
+    outline: none;
+}
+
+.adn-input-aluno{
+    border: none;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    outline: none;
+}
+
+.voltar-index{
+    padding: 15px 35px;
+    background-color: #7EC6D4;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+.btn-negative{
+    padding: 7px 35px;
+    background-color: #7EC6D4;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.btn-atualizar{
+    padding: 15px 35px;
+    background-color: #7EC6D4;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+.btn-voltar{
+    padding: 15px 35px;
+    background-color: #7EC6D4;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+.btn-voltar:hover{
+    background-color: #ff0000; 
+}
+
+
+#edit-aluno{
+    border: none;
+   
+    outline: none;
+}
+
+#finalizar-edit-aluno{
+    padding: 15px 25px;
+ 
+    font-size: 0.945rem;
+    background-color: #7EC6D4;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin-left: 88%;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+#finalizar-add-aluno{
+    padding: 15px 35px;
+    background-color: #7EC6D4;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    margin-left: 88%;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+/* Aumentando o tamanho dos campos de entrada */
+.form-control {
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+    padding: 1rem; /* Aumenta o preenchimento (altura) */
+}
+
+/* Garantir que os campos de texto ocupem toda a largura da c�lula */
+input[type="text"], input[type="number"] {
+    width: 100%; /* Faz os campos ocuparem toda a largura dispon�vel */
+    font-size: 1rem;
+}
+
+/* Adiciona um espa�amento entre as c�lulas da tabela */
+.table td, .table th {
+    vertical-align: middle; /* Alinha o conte�do no meio da c�lula */
+    padding: 1.5rem; /* Aumenta o padding das c�lulas para ficar mais espa�ado */
+}
+
+/* Flexbox para os bot�es ficarem lado a lado */
+.ctn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+}
+/* Estilizando o bot�o 'Voltar' */
+.voltar-index {
+    background-color: #7ec6d4;
+    border: none;
+    padding: 15px 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.voltar-index:hover {
+    background-color: #d32f2f;
+}
+
+@media screen and (max-width: 768px) {
+    .btn-add-finalizar{
+        padding: 15px 35px;
+        background-color: #7EC6D4;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        font-weight: bold;
+        margin-left: 61%;
+        margin-top: 20px;
+        transition: 0.5s;
+    }
+
+    .titulo{
+        font-weight: bold;
+        color: #000;
+        margin-top: 40%;
+    }
+    
+    .tabela-config{
+        background-color: #A4D7E1;
+        margin-top: 5%;
+    }
+}
+
+/* Aumentando o tamanho dos campos de entrada */
+        .form-control {
+            font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+            padding: 1rem; /* Aumenta o preenchimento (altura) */
+        }
+
+        /* Garantir que os campos de texto ocupem toda a largura da c�lula */
+        input[type="text"],
+        input[type="number"] {
+            width: 100%; /* Faz os campos ocuparem toda a largura dispon�vel */
+        }
+
+        /* Adiciona um espa�amento entre as c�lulas da tabela */
+        .table td,
+        .table th {
+            vertical-align: middle; /* Alinha o conte�do no meio da c�lula */
+            padding: 1.5rem; /* Aumenta o padding das c�lulas para ficar mais espa�ado */
+        }
+
+        /* Flexbox para os bot�es ficarem lado a lado */
+        .ctn {
+            margin-top: 20px;
+            display: flex;
+            justify-content: end;
+            gap: 10px; /* Espa�amento entre os bot�es */
+        }
+
+        .btn {
+            padding: 10px 20px;
+        }
+
+        /* Estilizando o bot�o 'Voltar' */
+        .voltar-index {
+            background-color: #7ec6d4;
+            border: none;
+            padding: 15px 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .voltar-index:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Estilizando o bot�o 'Finalizar' */
+        .btn-add-finalizar {
+            background-color: #4CAF50;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-add-finalizar:hover {
+            background-color: #388e3c;
+        }
+
+        /* Melhorando a visualiza��o da tabela */
+        .table-responsive {
+            margin-top: 30px;
+        }

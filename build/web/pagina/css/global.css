@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lunasima:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lunasima';
+}
+
+body{
+    width: 100vw;
+    height: 115vh;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 320px){
+    body{
+        height: 150vh;
+    }
+}
