@@ -37,7 +37,7 @@ O NoteManager é uma aplicação de boletim que permite a gestão de notas de al
 
 #### 3. Abra o netbeans em seu computador e abra o projeto NoteManager.
 
-4. Agora rode o projeto em Run.
+#### 4. Agora rode o projeto em Run.
 
 ## Uso do XAMPP
 O NoteManager utiliza o XAMPP como servidor local para o ambiente de desenvolvimento. O XAMPP é uma ferramenta fácil de usar que permite configurar rapidamente um servidor Apache com suporte a bancos de dados MySQL. Com ele, você pode executar o backend da aplicação, armazenar dados no banco de dados e testar o sistema localmente.
