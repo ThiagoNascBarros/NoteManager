@@ -21,6 +21,8 @@ O NoteManager é uma aplicação de boletim que permite a gestão de notas de al
 
 ### Backend
 - Java
+- MySQL
+- XAMPP
 
 ## Instalação
 
